@@ -26,7 +26,7 @@ if (!function_exists('add_action')) {
         <li class="color-green"><span class="left">help</span>查看帮助</li>
         <li v-for="(row,i) in rows" :key="i" v-html="row"></li>
         <li><span v-html="action?commandTips:defaultTips"></span>
-            <input id="command" type="text" @input="commandInput"/>
+            <input id="command" type="text" @input="commandInput" autocomplete="off"/>
         </li>
     </ul>
 </div>

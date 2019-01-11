@@ -99,7 +99,7 @@ class CommandIndex
 
                 if (!isset($_COOKIE['command_index_mode']) && $this->option['default_mode'] === 'command') {//默认命令模式
                     $commandMode = true;
-                } elseif (isset($_COOKIE['command_index_mode']) && $_COOKIE['cmd_index_mode'] === 'command') {
+                } elseif (isset($_COOKIE['command_index_mode']) && $_COOKIE['command_index_mode'] === 'command') {
                     $commandMode = true;
                 }
                 if ($commandMode) {
