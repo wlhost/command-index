@@ -35,7 +35,7 @@ if ($action === 'config') {
 ?>
 <div class="wrap">
     <h1>命令行首页配置</h1>
-    <p>用户访问 <?= home_url() ?>/?cmd_index_mode=command 即可切换为命令行模式。因此在首页放置一个此链接即可用户自主点击切换！<br></p>
+    <p>用户访问 <?= home_url() ?>/?command_index_mode=command 即可切换为命令行模式。因此在首页放置一个此链接即可用户自主点击切换！<br></p>
     <h2>基本设置</h2>
     <?php
     if (isset($message)) {

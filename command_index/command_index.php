@@ -2,7 +2,7 @@
 /*
 Plugin Name: Command Index
 Plugin URI: https://www.klsf.cc/
-Description: 仿linux命令行的博客首页，可以添加自定义命令
+Description: 仿命令行界面首页插件，可以添加自定义命令
 Author: klsf<me@klsf.men>
 Version: 1.0.5
 Author URI: https://www.klsf.cc/
@@ -18,7 +18,7 @@ define('CMD_INDEX_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('CMD_INDEX_PLUGIN_OPTION', 'cmd_index_plugin');
 
 
-class CmdIndex
+class CommandIndex
 {
     private $option;
 
@@ -57,7 +57,7 @@ class CmdIndex
 
     public function admin_menu()
     {
-        add_options_page('命令行首页-配置', 'CommandIndex', 'administrator', 'cmd_index_config', [$this, 'config_page']);
+        add_options_page('命令行首页-配置', 'CommandIndex', 'administrator', 'command_index_config', [$this, 'config_page']);
     }
 
     function config_page()
@@ -68,8 +68,8 @@ class CmdIndex
 
     public function plugin_action_links(array $links, $file)
     {
-        if ($file == 'cmd_index/cmd_index.php') {
-            $links[] = '<a href="' . admin_url('options-general.php?page=cmd_index_config') . '">设置</a>';
+        if ($file == 'command_index/command_index.php') {
+            $links[] = '<a href="' . admin_url('options-general.php?page=command_index_config') . '">设置</a>';
         }
         return $links;
     }
@@ -83,8 +83,8 @@ class CmdIndex
                 exit();
             }
         }
-        if (isset($_GET['cmd_index_mode'])) {
-            setcookie('cmd_index_mode', $_GET['cmd_index_mode'], time() + 3600 * 24 * 30, '/');
+        if (isset($_GET['command_index_mode'])) {
+            setcookie('command_index_mode', $_GET['command_index_mode'], time() + 3600 * 24 * 30, '/');
             header("Location:/");
             exit();
         }
@@ -97,9 +97,9 @@ class CmdIndex
             if (!strpos($ua, 'spider')) {//不是蜘蛛
                 $commandMode = false;
 
-                if (!isset($_COOKIE['cmd_index_mode']) && $this->option['default_mode'] === 'command') {//默认命令模式
+                if (!isset($_COOKIE['command_index_mode']) && $this->option['default_mode'] === 'command') {//默认命令模式
                     $commandMode = true;
-                } elseif (isset($_COOKIE['cmd_index_mode']) && $_COOKIE['cmd_index_mode'] === 'command') {
+                } elseif (isset($_COOKIE['command_index_mode']) && $_COOKIE['cmd_index_mode'] === 'command') {
                     $commandMode = true;
                 }
                 if ($commandMode) {
@@ -122,7 +122,7 @@ class CmdIndex
     }
 }
 
-$cmdIndex = new CmdIndex();
-$cmdIndex->run();
+$commandIndex = new CommandIndex();
+$commandIndex->run();
 
 ?>

@@ -20,9 +20,9 @@ function getTips() {
     if (typeof (returnCitySN) !== 'undefined') {
         tips += " from " + returnCitySN.cip;
     }
-    var _tips = getCookie("cmd_index_tips");
+    var _tips = getCookie("command_index_tips");
     tips = _tips ? _tips : tips;
-    setCookie('cmd_index_tips', tips);
+    setCookie('command_index_tips', tips);
     return tips;
 }
 
@@ -91,7 +91,7 @@ var _vue = new Vue({
                     return;
                 } else if (command.replace(/\s+/g, "") === 'web') {
                     //切换为WEB访问
-                    setCookie('cmd_index_mode', 'web');
+                    setCookie('command_index_mode', 'web');
                     window.location.reload();
                     return;
                 }
