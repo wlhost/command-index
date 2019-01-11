@@ -1,0 +1,58 @@
+html {
+    height: calc(100% - 20px);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: black;
+    margin: 0;
+    color: rgb(187, 187, 187);
+    font-size: 15px;
+}
+
+ul {
+    padding: 0 15px 15px 15px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#window {
+    height: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#command {
+    font-size: 15px;
+    background: black;
+    color: rgb(187, 187, 187);
+    margin: 5px 0;
+    width: 50%;
+    border: 0;
+    display: inline-block;
+    outline: none;
+}
+
+.color-green {
+    color: green;
+}
+
+.color-red {
+    color: red;
+}
+
+.left {
+    width: 120px;
+    display: block;
+    float: left;
+}
